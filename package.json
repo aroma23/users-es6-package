@@ -1,0 +1,15 @@
+{
+  "name": "users-es6-package",
+  "version": "1.0.0",
+  "main": "Users.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "A reusable JavaScript package",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "axios": "^1.7.9"
+  }
+}
