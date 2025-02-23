@@ -10,16 +10,30 @@ export class Users {
     * Read Users
     * @returns {Promise<object>} Successful Response (HTTP 200)
     */
-    readUser = async (userId) => {
-        const readUserSpec = pactum.spec();
+
+    readUser = async (userId, spec) => {
+        let readUserSpec = pactum.spec();
+        if (typeof spec !== "undefined") {
+            readUserSpec = spec;
+        }
         await readUserSpec
             .get(this.baseUrl + '/users/' + userId)
             .expectStatus(200);
         return readUserSpec;
     }
 
-    addUser = async (body) => {
-        const addUserSpec = pactum.spec();
+    // // tranditional way of return object
+    // addUser = async (body) => {
+    //     return await pactum.spec()
+    //         .post(this.baseUrl + '/users').withBody(body)
+    //         .expectStatus(201);
+    // }
+
+    addUser = async (body, spec) => {
+        let addUserSpec = pactum.spec();
+        if (typeof spec !== "undefined") {
+            addUserSpec = spec;
+        }
         await addUserSpec
             .post(this.baseUrl + '/users').withBody(body)
             .expectStatus(201);
