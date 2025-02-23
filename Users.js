@@ -19,7 +19,7 @@ export class Users {
     }
 
     addUser = async (body) => {
-        const addUserSpec = await pactum.spec();
+        const addUserSpec = pactum.spec();
         await addUserSpec
             .post(this.baseUrl + '/users').withBody(body)
             .expectStatus(201);
