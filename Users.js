@@ -1,5 +1,5 @@
-// Importing Axios
-import axios from 'axios';
+// useUser.js
+import pactum from 'pactum';
 
 export class Users {
     constructor(baseUrl) {
@@ -10,18 +10,18 @@ export class Users {
     * Read Users
     * @returns {Promise<object>} Successful Response (HTTP 200)
     */
-    readUsers = async () => {
-        return await axios.get(this.baseUrl + '/users/1')
-            .catch(error => {
-                // Handle error
-                console.error('Error fetching data:', error);
-            });
+    readUser = async (userId) => {
+        const userResponse = await pactum.spec()
+            .get(this.baseUrl + '/users/' + userId)
+            .expectStatus(200);
+        return userResponse;
     }
 
     addUser = async (body) => {
-        return await axios.post(this.baseUrl + '/users', body)
-        .catch(function (error) {
-            console.log(error);
-        });
+        const userResponse = await pactum.spec()
+            .post(this.baseUrl + '/users').withBody(body)
+            .expectStatus(201);
+        return userResponse;
+
     }
 }

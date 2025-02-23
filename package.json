@@ -1,5 +1,5 @@
 {
-  "name": "users-es6-package",
+  "name": "users-es6-pactum-package",
   "version": "1.0.0",
   "main": "Users.js",
   "scripts": {
@@ -9,7 +9,7 @@
   "author": "A reusable JavaScript package",
   "license": "ISC",
   "description": "",
-  "devDependencies": {
-    "axios": "^1.7.9"
+  "dependencies": {
+    "pactum": "^3.7.6"
   }
 }
