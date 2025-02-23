@@ -11,17 +11,18 @@ export class Users {
     * @returns {Promise<object>} Successful Response (HTTP 200)
     */
     readUser = async (userId) => {
-        const userResponse = await pactum.spec()
+        const readUserSpec = pactum.spec();
+        await readUserSpec
             .get(this.baseUrl + '/users/' + userId)
             .expectStatus(200);
-        return userResponse;
+        return readUserSpec;
     }
 
     addUser = async (body) => {
-        const userResponse = await pactum.spec()
+        const addUserSpec = await pactum.spec();
+        await addUserSpec
             .post(this.baseUrl + '/users').withBody(body)
             .expectStatus(201);
-        return userResponse;
-
+        return addUserSpec;
     }
 }
