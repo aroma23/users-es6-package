@@ -1,6 +1,7 @@
 import pactum from 'pactum';
 
-const baseUrl = process.env.VITE_USERS_API_BASE_URL || '"VITE_USERS_API_BASE_URL" is not set in .env file';
+// const baseUrl = process.env.VITE_USERS_API_BASE_URL || '"VITE_USERS_API_BASE_URL" is not set in .env file';
+const baseUrl = (typeof Cypress != 'undefined' && Cypress.env) ? Cypress.env('VITE_USERS_API_BASE_URL') : process.env.VITE_USERS_API_BASE_URL 
 
 export class Users {
     /**
