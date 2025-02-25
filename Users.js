@@ -1,42 +1,30 @@
-// useUser.js
 import pactum from 'pactum';
 
-export class Users {
-    constructor(baseUrl) {
-        this.baseUrl = baseUrl;
-    }
+const baseUrl = process.env.VITE_USERS_API_BASE_URL || '"VITE_USERS_API_BASE_URL" is not set in .env file';
 
+export class Users {
     /**
     * Read Users
     * @returns {Promise<object>} Successful Response (HTTP 200)
     */
 
-    readUser = async (userId, spec) => {
+    static readUser = async (userId, spec) => {
         let readUserSpec = pactum.spec();
         if (typeof spec !== "undefined") {
             readUserSpec = spec;
         }
         await readUserSpec
-            .get(this.baseUrl + '/users/' + userId)
-            .expectStatus(200);
+            .get(baseUrl + '/users/' + userId);
         return readUserSpec;
     }
 
-    // // tranditional way of return object
-    // addUser = async (body) => {
-    //     return await pactum.spec()
-    //         .post(this.baseUrl + '/users').withBody(body)
-    //         .expectStatus(201);
-    // }
-
-    addUser = async (body, spec) => {
+    static addUser = async (body, spec) => {
         let addUserSpec = pactum.spec();
         if (typeof spec !== "undefined") {
             addUserSpec = spec;
         }
         await addUserSpec
-            .post(this.baseUrl + '/users').withBody(body)
-            .expectStatus(201);
+            .post(baseUrl + '/users').withBody(body);
         return addUserSpec;
     }
 }
