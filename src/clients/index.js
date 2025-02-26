@@ -5,3 +5,7 @@ export {
 export {
     Users
 } from "./Users.js";
+
+export {
+    getValueFromEnvironment
+} from "../helper/index.js"
