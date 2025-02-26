@@ -14,10 +14,9 @@ export class Salesforce {
     * @returns {Promise<object>} Successful Response (HTTP 200)
     */
 
-    Colors = Object.freeze({
+    static Methods = Object.freeze({
         writeSalesforce: 'writeSalesforce',
-        GREEN: 'green',
-        BLUE: 'blue'
+        readSalesforce: 'readSalesforce'
     });
 
     static readSalesforce = async (userId, spec) => {
