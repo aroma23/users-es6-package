@@ -7,7 +7,7 @@
 
 export const getValueFromEnvironment = (key) => {
     const holder = (typeof Cypress != 'undefined' && Cypress.env) ? Cypress.env(key) : process.env[key]
-    if (holder === "" || baseUrl === 'undefined') {
+    if (holder === "" || holder === 'undefined') {
         console.error(key + " is not defined in .env or environment variables")
     }
     return holder;
