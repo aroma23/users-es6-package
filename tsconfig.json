@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                             // Compile to ES6 (or higher, depending on your needs)
+    "module": "ESNext",                          // Use ES modules
+    "moduleResolution": "Node",                  // Resolve modules as Node.js would
+    "outDir": "./dist",                          // Output directory for compiled files
+    "rootDir": "./src",                          // Root directory for the TypeScript files
+    "strict": true,                              // Enable all strict type-checking options
+    "esModuleInterop": true,                     // Allows importing non-ESM modules
+    "skipLibCheck": true,                        // Skip type-checking of declaration files for faster builds
+    "forceConsistentCasingInFileNames": true,    // Ensure consistent casing of file names
+    "resolveJsonModule": true,                   // Allow importing JSON files
+    "allowJs": true,                             // Allow JavaScript files to be compiled alongside TypeScript
+    "isolatedModules": true,                     // Ensure each file is treated as an isolated module (useful for projects using Babel)
+    "noEmitOnError": true,                       // Don't output files if there are TypeScript errors
+    "jsx": "react-jsx"                           // Specify JSX syntax for React (use 'react' if using older React versions)
+  },
+  "include": [
+    "src/**/*.ts",                               // Include all .ts files in the 'src' folder
+    "src/**/*.tsx"                               // Include all .tsx files if using React
+  ],
+  "exclude": [
+    "node_modules",                              // Exclude node_modules folder from being compiled
+    "dist"                                       // Exclude the dist folder where the compiled files go
+  ]
+}

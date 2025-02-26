@@ -1,8 +1,9 @@
 {
   "name": "users-es6-pactum-package",
-  "version": "1.1.0",
-  "main": "",
+  "version": "1.2.0",
+  "main": "./src/index.js",
   "exports": {
+    ".": null,
     "./utils": {
       "require": "./lib/utils/index.js",
       "import": "./src/utils/index.js"
@@ -11,11 +12,6 @@
       "require": "./lib/clients/index.js",
       "import": "./src/clients/index.js"
     }
-  },
-  "scripts": {
-    "build": "rm -rf lib && babel src --out-dir lib && npx tsc && cp -r src/clients/*/payloads lib/clients/*/",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublishOnly": "npm run build"
   },
   "keywords": [],
   "author": "A reusable JavaScript package",
