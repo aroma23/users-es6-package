@@ -1,9 +1,12 @@
 {
   "name": "users-es6-pactum-package",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "./src/index.js",
   "exports": {
-    ".": null,
+    ".": {
+      "require": "./lib/index.js",
+      "import": "./src/index.js"
+    },
     "./utils": {
       "require": "./lib/utils/index.js",
       "import": "./src/utils/index.js"
