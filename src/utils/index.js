@@ -1,3 +1,3 @@
 export {
     StringUtils
-} from "./String.js";
+} from "./string/String.js"
