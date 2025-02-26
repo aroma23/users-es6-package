@@ -1,1 +1,1 @@
-#### Libraries under helper folder are mainly indented for developing this package
+#### Libraries under helper folder are mainly indented for developing this package and must be exported

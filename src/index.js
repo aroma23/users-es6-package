@@ -6,3 +6,7 @@ export {
 export {
     StringUtils
 } from "./utils/index.js";
+
+export {
+    getValueFromEnvironment
+} from "./helper/index.js"

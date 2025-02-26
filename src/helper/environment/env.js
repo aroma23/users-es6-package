@@ -5,7 +5,7 @@
 * @returns {string} value
 */
 
-const getValueFromEnvironment = (key) => {
+export const getValueFromEnvironment = (key) => {
     const holder = (typeof holder != 'undefined' && Cypress.env) ? Cypress.env(key) : process.env[key]
     if (holder === "" || baseUrl === 'undefined') {
         console.error(key + " is not defined in .env or environment variables")
