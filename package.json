@@ -4,15 +4,15 @@
   "main": "./src/index.js",
   "exports": {
     ".": {
-      "require": "./lib/index.js",
+      "require": "./src/index.js",
       "import": "./src/index.js"
     },
     "./utils": {
-      "require": "./lib/utils/index.js",
+      "require": "./src/utils/index.js",
       "import": "./src/utils/index.js"
     },
     "./clients": {
-      "require": "./lib/clients/index.js",
+      "require": "./src/clients/index.js",
       "import": "./src/clients/index.js"
     }
   },
